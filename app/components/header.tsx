@@ -36,7 +36,7 @@ const Header = ({ className }: Props) => {
             {/* Navigation */}
             <nav
               aria-label="Main navigation"
-              className="hidden md:flex items-center lg:text-lg">
+              className="hidden md:flex items-center justify-end lg:text-lg">
               <ul className="flex space-x-8">
                 <li>
                   <Link to="/" className={linkClassname('/')}>

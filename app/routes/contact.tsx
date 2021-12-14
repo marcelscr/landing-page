@@ -3,7 +3,8 @@ import Contact from '~/components/contact'
 
 export const meta: MetaFunction = () => {
   return {
-    title: 'Marcel Rebouças - Contact'
+    title: 'Contact Marcel Rebouças',
+    description: 'You can contact me via LinkedIn or email.'
   }
 }
 
