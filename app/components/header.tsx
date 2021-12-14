@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'remix'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import cn from 'classnames'
 import { MenuIcon } from '@heroicons/react/solid'
 
@@ -16,7 +16,12 @@ const linkClassname = (path: string) => {
 }
 
 const Header = ({ className }: Props) => {
+  const location = useLocation()
   const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    setOpen(false)
+  }, [location])
 
   return (
     <>
