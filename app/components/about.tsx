@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div>
+    <div className="m-auto max-w-5xl">
       <h1 className="text-lg font-bold">
         Marcel Rebouças - Front End Developer
       </h1>

@@ -15,48 +15,50 @@ const Layout = ({ children }: Props) => {
   return (
     <div className="w-screen h-screen flex flex-col items-stretch font-light">
       {/* Header */}
-      <header className="flex-shrink-0 p-8 bg-black text-white">
-        <div className="grid grid-cols-3">
-          <Link to="/" className="w-[106px] hover:opacity-75">
-            <RemixLogo />
-          </Link>
+      <header className="flex-shrink-0 p-8 bg-black text-white ">
+        <div className="m-auto max-w-5xl">
+          <div className="grid grid-cols-3 flex-auto">
+            <Link to="/" className="w-[106px] hover:opacity-75">
+              <RemixLogo />
+            </Link>
 
-          <nav
-            aria-label="Main navigation"
-            className="hidden md:flex items-center lg:text-lg">
-            <ul className="flex space-x-8">
-              <li>
-                <Link to="/" className={linkClassname('/')}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className={linkClassname('/contact')}>
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
+            <nav
+              aria-label="Main navigation"
+              className="hidden md:flex items-center lg:text-lg">
+              <ul className="flex space-x-8">
+                <li>
+                  <Link to="/" className={linkClassname('/')}>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className={linkClassname('/contact')}>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </nav>
 
-          {/* Social Media */}
-          <div className="hidden md:inline">
-            <ul className="flex space-x-8 text-2xl justify-end">
-              <li>
-                <Link to="/" className="fa fa-linkedin hover:opacity-75" />
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="fa fa-github transition hover:opacity-75"
-                />
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="fa fa-instagram transition hover:opacity-75"
-                />
-              </li>
-            </ul>
+            {/* Social Media */}
+            <div className="hidden md:inline">
+              <ul className="flex space-x-8 text-2xl justify-end">
+                <li>
+                  <Link to="/" className="fa fa-linkedin hover:opacity-75" />
+                </li>
+                <li>
+                  <Link
+                    to="/"
+                    className="fa fa-github transition hover:opacity-75"
+                  />
+                </li>
+                <li>
+                  <Link
+                    to="/"
+                    className="fa fa-instagram transition hover:opacity-75"
+                  />
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </header>
