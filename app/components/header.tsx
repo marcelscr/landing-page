@@ -25,9 +25,9 @@ const Header = ({ className }: Props) => {
 
   return (
     <>
-      <header className={cn('p-8 bg-black text-white', className)}>
+      <header className={cn('bg-black text-white p-8', className)}>
         <div className="m-auto max-w-5xl">
-          <div className="grid grid-cols-3 flex-auto">
+          <div className="flex-auto grid grid-cols-2 md:grid-cols-3">
             {/* Logo */}
             <Link to="/" className="w-[106px] hover:opacity-75">
               <RemixLogo />
@@ -73,8 +73,6 @@ const Header = ({ className }: Props) => {
             </div>
 
             {/* Empty hidden middle grid cell */}
-            <div className="justify-end md:hidden"></div>
-            {/* Small Menu */}
             <div className="flex items-center justify-end md:hidden">
               <MenuIcon
                 className="w-8 h-8 hover:opacity-75 cursor-pointer"
