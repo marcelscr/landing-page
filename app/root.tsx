@@ -13,7 +13,14 @@ import Layout from './components/layout'
 import tailwindUrl from './styles/tailwind.css'
 
 export const links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: tailwindUrl }]
+  return [
+    { rel: 'stylesheet', href: tailwindUrl },
+    {
+      // https://www.w3schools.com/howto/howto_css_social_media_buttons.asp
+      rel: 'stylesheet',
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+    }
+  ]
 }
 
 export default function App() {

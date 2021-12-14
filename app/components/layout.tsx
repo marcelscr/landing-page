@@ -8,20 +8,22 @@ type Props = {
 const Layout = ({ children }: Props) => {
   const location = useLocation()
   const linkClassname = (path: string) =>
-    cn('', {
+    cn('hover:opacity-75', {
       'font-semibold': location.pathname.endsWith(path)
     })
 
   return (
-    <div className="w-screen h-screen flex flex-col bg-black text-white items-stretch font-light">
+    <div className="w-screen h-screen flex flex-col items-stretch font-light">
       {/* Header */}
-      <header className="flex-shrink-0 p-8">
-        <div className="flex items-center">
-          <Link to="/">
+      <header className="flex-shrink-0 p-8 bg-black text-white">
+        <div className="grid grid-cols-3">
+          <Link to="/" className="w-[106px] hover:opacity-75">
             <RemixLogo />
           </Link>
 
-          <nav aria-label="Main navigation" className="pl-8">
+          <nav
+            aria-label="Main navigation"
+            className="hidden md:flex items-center lg:text-lg">
             <ul className="flex space-x-8">
               <li>
                 <Link to="/" className={linkClassname('/')}>
@@ -35,11 +37,32 @@ const Layout = ({ children }: Props) => {
               </li>
             </ul>
           </nav>
+
+          {/* Social Media */}
+          <div className="hidden md:inline">
+            <ul className="flex space-x-8 text-2xl justify-end">
+              <li>
+                <Link to="/" className="fa fa-linkedin hover:opacity-75" />
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="fa fa-github transition hover:opacity-75"
+                />
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="fa fa-instagram transition hover:opacity-75"
+                />
+              </li>
+            </ul>
+          </div>
         </div>
       </header>
 
       {/* Content */}
-      <main className="flex-grow flex-shrink-0 px-8">
+      <main className="flex-grow flex-shrink-0 p-8">
         <div>{children}</div>
       </main>
 
