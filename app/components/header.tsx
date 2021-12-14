@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'remix'
+import { useState } from 'react'
 import cn from 'classnames'
 import { MenuIcon } from '@heroicons/react/solid'
 
@@ -6,43 +7,104 @@ type Props = {
   className?: string
 }
 
-const Header = ({ className }: Props) => {
+const linkClassname = (path: string) => {
   const location = useLocation()
-  const linkClassname = (path: string) =>
-    cn('hover:opacity-75', {
-      'font-semibold': location.pathname.endsWith(path)
-    })
+
+  return cn('hover:opacity-75', {
+    'font-semibold': location.pathname.endsWith(path)
+  })
+}
+
+const Header = ({ className }: Props) => {
+  const [open, setOpen] = useState(false)
 
   return (
-    <header className={cn('p-8 bg-black text-white', className)}>
-      <div className="m-auto max-w-5xl">
-        <div className="grid grid-cols-3 flex-auto">
-          {/* Logo */}
-          <Link to="/" className="w-[106px] hover:opacity-75">
-            <RemixLogo />
-          </Link>
+    <>
+      <header className={cn('p-8 bg-black text-white', className)}>
+        <div className="m-auto max-w-5xl">
+          <div className="grid grid-cols-3 flex-auto">
+            {/* Logo */}
+            <Link to="/" className="w-[106px] hover:opacity-75">
+              <RemixLogo />
+            </Link>
 
-          {/* Navigation */}
-          <nav
-            aria-label="Main navigation"
-            className="hidden md:flex items-center lg:text-lg">
-            <ul className="flex space-x-8">
-              <li>
-                <Link to="/" className={linkClassname('/')}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className={linkClassname('/contact')}>
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
+            {/* Navigation */}
+            <nav
+              aria-label="Main navigation"
+              className="hidden md:flex items-center lg:text-lg">
+              <ul className="flex space-x-8">
+                <li>
+                  <Link to="/" className={linkClassname('/')}>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className={linkClassname('/contact')}>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </nav>
 
-          {/* Social Media */}
-          <div className="hidden md:inline">
-            <ul className="flex space-x-8 text-2xl justify-end">
+            {/* Social Media */}
+            <div className="hidden md:inline">
+              <ul className="flex space-x-8 text-2xl justify-end">
+                <li>
+                  <Link to="/" className="fa fa-linkedin hover:opacity-75" />
+                </li>
+                <li>
+                  <Link
+                    to="/"
+                    className="fa fa-github transition hover:opacity-75"
+                  />
+                </li>
+                <li>
+                  <Link
+                    to="/"
+                    className="fa fa-instagram transition hover:opacity-75"
+                  />
+                </li>
+              </ul>
+            </div>
+
+            {/* Empty hidden middle grid cell */}
+            <div className="justify-end md:hidden"></div>
+            {/* Small Menu */}
+            <div className="flex items-center justify-end md:hidden">
+              <MenuIcon
+                className="w-8 h-8 hover:opacity-75 cursor-pointer"
+                onClick={() => setOpen(!open)}
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      {open && <SmallScreenMenu />}
+    </>
+  )
+}
+
+const SmallScreenMenu = () => {
+  const Divider = () => <div className="bg-gray-700 h-[0.1px] w-full" />
+
+  return (
+    <div className="bg-gradient-to-b from-black to-gray-900 text-white text-lg md:hidden">
+      <nav aria-label="Main navigation">
+        <ul className="flex flex-col items-center p-8 space-y-6 ">
+          <li>
+            <Link to="/" className={linkClassname('/')}>
+              About
+            </Link>
+          </li>
+          <Divider />
+          <li>
+            <Link to="/contact" className={linkClassname('/contact')}>
+              Contact
+            </Link>
+          </li>
+          <Divider />
+          <li>
+            <ul className="flex space-x-8 text-2xl justify-center">
               <li>
                 <Link to="/" className="fa fa-linkedin hover:opacity-75" />
               </li>
@@ -59,17 +121,10 @@ const Header = ({ className }: Props) => {
                 />
               </li>
             </ul>
-          </div>
-
-          {/* Empty hidden middle grid cell */}
-          <div className="justify-end md:hidden"></div>
-          {/* Small Menu */}
-          <div className="flex items-center justify-end md:hidden">
-            <MenuIcon className="w-8 h-8 hover:opacity-75 cursor-pointer" />
-          </div>
-        </div>
-      </div>
-    </header>
+          </li>
+        </ul>
+      </nav>
+    </div>
   )
 }
 
