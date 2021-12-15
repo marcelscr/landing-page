@@ -7,7 +7,7 @@
     "build": "yarn build:css && remix build",
     "build:css": "tailwindcss -o ./app/styles/tailwind.css --minify",
     "dev": "concurrently \"yarn dev:css\" \"remix dev\"",
-    "dev:css": "tailwindcss -o ./app/styles/tailwind.css --watch --minify",
+    "dev:css": "tailwindcss -o ./app/styles/tailwind.css --minify --watch",
     "postinstall": "remix setup node",
     "lint": "eslint 'app/**/*.ts?(x)'",
     "lintFix": "eslint 'app/**/*.ts?(x)' --fix",

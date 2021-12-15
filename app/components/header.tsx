@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react'
 import cn from 'classnames'
 import { MenuIcon } from '@heroicons/react/solid'
 
-type Props = {
-  className?: string
+const Links = {
+  INDEX: '/',
+  PROJECTS: '/projects',
+  CONTACT: '/contact'
 }
 
 const linkClassname = (path: string) => {
@@ -13,6 +15,10 @@ const linkClassname = (path: string) => {
   return cn('hover:opacity-75', {
     'font-semibold': location.pathname.endsWith(path)
   })
+}
+
+type Props = {
+  className?: string
 }
 
 const Header = ({ className }: Props) => {
@@ -29,7 +35,7 @@ const Header = ({ className }: Props) => {
         <div className="m-auto max-w-5xl">
           <div className="flex-auto grid grid-cols-2 md:grid-cols-3">
             {/* Logo */}
-            <Link to="/" className="w-[106px] hover:opacity-75">
+            <Link to={Links.INDEX} className="w-[106px] hover:opacity-75">
               <RemixLogo />
             </Link>
 
@@ -39,12 +45,21 @@ const Header = ({ className }: Props) => {
               className="hidden md:flex items-center justify-end lg:text-lg">
               <ul className="flex space-x-8">
                 <li>
-                  <Link to="/" className={linkClassname('/')}>
+                  <Link to={Links.INDEX} className={linkClassname(Links.INDEX)}>
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className={linkClassname('/contact')}>
+                  <Link
+                    to={Links.PROJECTS}
+                    className={linkClassname(Links.PROJECTS)}>
+                    Projects
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={Links.CONTACT}
+                    className={linkClassname(Links.CONTACT)}>
                     Contact
                   </Link>
                 </li>
@@ -55,17 +70,20 @@ const Header = ({ className }: Props) => {
             <div className="hidden md:inline">
               <ul className="flex space-x-8 text-2xl justify-end">
                 <li>
-                  <Link to="/" className="fa fa-linkedin hover:opacity-75" />
+                  <Link
+                    to={Links.INDEX}
+                    className="fa fa-linkedin hover:opacity-75"
+                  />
                 </li>
                 <li>
                   <Link
-                    to="/"
+                    to={Links.INDEX}
                     className="fa fa-github transition hover:opacity-75"
                   />
                 </li>
                 <li>
                   <Link
-                    to="/"
+                    to={Links.INDEX}
                     className="fa fa-instagram transition hover:opacity-75"
                   />
                 </li>
@@ -95,13 +113,19 @@ const SmallScreenMenu = () => {
       <nav aria-label="Main navigation">
         <ul className="flex flex-col items-center p-8 space-y-6 ">
           <li>
-            <Link to="/" className={linkClassname('/')}>
+            <Link to={Links.INDEX} className={linkClassname(Links.INDEX)}>
               About
             </Link>
           </li>
           <Divider />
           <li>
-            <Link to="/contact" className={linkClassname('/contact')}>
+            <Link to={Links.PROJECTS} className={linkClassname(Links.PROJECTS)}>
+              Projects
+            </Link>
+          </li>
+          <Divider />
+          <li>
+            <Link to={Links.CONTACT} className={linkClassname(Links.CONTACT)}>
               Contact
             </Link>
           </li>
@@ -109,17 +133,20 @@ const SmallScreenMenu = () => {
           <li>
             <ul className="flex space-x-8 text-2xl justify-center">
               <li>
-                <Link to="/" className="fa fa-linkedin hover:opacity-75" />
+                <Link
+                  to={Links.INDEX}
+                  className="fa fa-linkedin hover:opacity-75"
+                />
               </li>
               <li>
                 <Link
-                  to="/"
+                  to={Links.INDEX}
                   className="fa fa-github transition hover:opacity-75"
                 />
               </li>
               <li>
                 <Link
-                  to="/"
+                  to={Links.INDEX}
                   className="fa fa-instagram transition hover:opacity-75"
                 />
               </li>
