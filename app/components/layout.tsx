@@ -18,7 +18,7 @@ const Layout = ({ children }: Props) => {
       {/* Footer */}
       <footer className="flex flex-shrink-0 items-center justify-center p-8">
         <div>
-          <p>&copy; 2021 Marcel Rebouças</p>
+          <p className="text-gray-700">&copy; 2021 Marcel Rebouças</p>
         </div>
       </footer>
     </div>
