@@ -11,6 +11,7 @@ const Projects = () => {
           <li>1. This website</li>
           <li>2. Spotify with Remix</li>
         </ul>
+        <p className="pt-4">Work in progress.</p>
       </section>
     </div>
   )
