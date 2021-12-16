@@ -7,7 +7,7 @@ const About = () => {
         <section>
           <div className="grid md:space-x-4 md:grid-cols-2 border-b-[1px]">
             {/* Content */}
-            <div className="mx-4 flex flex-col justify-center md:mx-0">
+            <div className="flex flex-col justify-center">
               <h1 className="text-6xl font-bold text-gray-800 mt-10 md:text-8xl">
                 marcel.
               </h1>

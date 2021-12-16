@@ -37,9 +37,7 @@ const Header = ({ className }: Props) => {
         <div className="m-auto max-w-5xl">
           <div className="flex-auto grid grid-cols-2 md:grid-cols-3">
             {/* Logo */}
-            <Link
-              to={Links.INDEX}
-              className="w-[106px] hover:opacity-75 ml-4 md:ml-0">
+            <Link to={Links.INDEX} className="w-[106px] hover:opacity-75">
               <img src={logoMe} alt="pixelated logo" className="w-8 h-8" />
             </Link>
 
