@@ -1,8 +1,9 @@
-import { Link, useLocation } from 'remix'
-import { useState, useEffect } from 'react'
+import { Link, NavLink } from 'remix'
+import { useState } from 'react'
 import cn from 'classnames'
 import { MenuIcon } from '@heroicons/react/solid'
 
+import ExternalLink from './utils/externalLink'
 import logoMe from './images/logo-me.png'
 
 const Links = {
@@ -11,11 +12,15 @@ const Links = {
   CONTACT: '/contact'
 }
 
-const linkClassname = (path: string) => {
-  const location = useLocation()
+const SocialMedia = {
+  LINKEDIN: 'https://www.linkedin.com/in/marcel-rebou%C3%A7as-14291883/',
+  INSTAGRAM: 'https://www.instagram.com/marcelreboucas/',
+  GITHUB: 'https://github.com/marcelscr'
+}
 
+const navLinkClassname = (active: boolean) => {
   return cn('hover:opacity-75', {
-    'font-semibold': location.pathname.endsWith(path)
+    'font-semibold': active
   })
 }
 
@@ -24,12 +29,7 @@ type Props = {
 }
 
 const Header = ({ className }: Props) => {
-  const location = useLocation()
   const [open, setOpen] = useState(false)
-
-  useEffect(() => {
-    setOpen(false)
-  }, [location])
 
   return (
     <>
@@ -47,23 +47,25 @@ const Header = ({ className }: Props) => {
               className="hidden md:flex items-center justify-end lg:text-lg">
               <ul className="flex space-x-8">
                 <li>
-                  <Link to={Links.INDEX} className={linkClassname(Links.INDEX)}>
+                  <NavLink
+                    to={Links.INDEX}
+                    className={link => navLinkClassname(link.isActive)}>
                     About
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to={Links.PROJECTS}
-                    className={linkClassname(Links.PROJECTS)}>
+                    className={link => navLinkClassname(link.isActive)}>
                     Projects
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to={Links.CONTACT}
-                    className={linkClassname(Links.CONTACT)}>
+                    className={link => navLinkClassname(link.isActive)}>
                     Contact
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
@@ -72,20 +74,20 @@ const Header = ({ className }: Props) => {
             <div className="hidden md:inline">
               <ul className="flex space-x-8 text-2xl justify-end">
                 <li>
-                  <Link
-                    to={Links.INDEX}
+                  <ExternalLink
+                    to={SocialMedia.LINKEDIN}
                     className="fa fa-linkedin hover:opacity-75"
                   />
                 </li>
                 <li>
-                  <Link
-                    to={Links.INDEX}
+                  <ExternalLink
+                    to={SocialMedia.GITHUB}
                     className="fa fa-github transition hover:opacity-75"
                   />
                 </li>
                 <li>
-                  <Link
-                    to={Links.INDEX}
+                  <ExternalLink
+                    to={SocialMedia.INSTAGRAM}
                     className="fa fa-instagram transition hover:opacity-75"
                   />
                 </li>
@@ -115,40 +117,46 @@ const SmallScreenMenu = () => {
       <nav aria-label="Main navigation">
         <ul className="flex flex-col items-center p-8 space-y-6 ">
           <li>
-            <Link to={Links.INDEX} className={linkClassname(Links.INDEX)}>
+            <NavLink
+              to={Links.INDEX}
+              className={link => navLinkClassname(link.isActive)}>
               About
-            </Link>
+            </NavLink>
           </li>
           <Divider />
           <li>
-            <Link to={Links.PROJECTS} className={linkClassname(Links.PROJECTS)}>
+            <NavLink
+              to={Links.PROJECTS}
+              className={link => navLinkClassname(link.isActive)}>
               Projects
-            </Link>
+            </NavLink>
           </li>
           <Divider />
           <li>
-            <Link to={Links.CONTACT} className={linkClassname(Links.CONTACT)}>
+            <NavLink
+              to={Links.CONTACT}
+              className={link => navLinkClassname(link.isActive)}>
               Contact
-            </Link>
+            </NavLink>
           </li>
           <Divider />
           <li>
             <ul className="flex space-x-8 text-2xl justify-center">
               <li>
-                <Link
-                  to={Links.INDEX}
+                <ExternalLink
+                  to={SocialMedia.LINKEDIN}
                   className="fa fa-linkedin hover:opacity-75"
                 />
               </li>
               <li>
-                <Link
-                  to={Links.INDEX}
+                <ExternalLink
+                  to={SocialMedia.GITHUB}
                   className="fa fa-github transition hover:opacity-75"
                 />
               </li>
               <li>
-                <Link
-                  to={Links.INDEX}
+                <ExternalLink
+                  to={SocialMedia.INSTAGRAM}
                   className="fa fa-instagram transition hover:opacity-75"
                 />
               </li>
