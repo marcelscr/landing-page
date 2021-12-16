@@ -12,7 +12,7 @@ const About = () => {
                 marcel.
               </h1>
               <h2 className="text-3xl font-bold text-gray-700 md:text-4xl">
-                without an o.
+                marcelo without an o.
               </h2>
               <h3 className="pt-6 text-gray-600 text-2xl">
                 I'm a front end developer living in Recife, Brazil ☀️
