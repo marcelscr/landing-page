@@ -11,18 +11,18 @@ const Projects = () => {
         </p>
         <ul className="pt-4 space-y-4">
           <li>
-            1. This website{' '}
             <ExternalLink
               to="https://github.com/marcelscr/landing-page"
               className="fa fa-github"
-            />
+            />{' '}
+            This website
           </li>
           <li>
-            2. Spotify with Remix{' '}
             <ExternalLink
               to="https://github.com/marcelscr/spotify-remix"
               className="fa fa-github"
-            />
+            />{' '}
+            Spotify with Remix
           </li>
         </ul>
         <p className="pt-4">Work in progress.</p>
