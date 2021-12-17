@@ -20,7 +20,7 @@ const About = () => {
                 marcelo without an o.
               </h2>
               <h3 className="pt-6 text-gray-600 text-2xl">
-                I'm a front end developer living in Recife, Brazil ☀️
+                I'm a front end developer from Recife, Brazil ☀️
               </h3>
               <p className="pt-6 text-gray-700 text-lg">
                 I like to solve problems, bring beautiful designs to life and
@@ -53,7 +53,7 @@ const About = () => {
             {/* Content */}
             <div className="flex flex-col justify-center items-center mt-20 md:mt-0">
               <h1 className="text-3xl text-gray-700 md:text-4xl">
-                Nerdy interests 💻
+                💻 Nerdy interests
               </h1>
 
               <ul className="text-lg text-gray-500 text-center pt-8 space-y-3">
