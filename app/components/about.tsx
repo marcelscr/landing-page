@@ -92,7 +92,7 @@ const About = () => {
                 💪🏼 Random facts
               </h1>
 
-              <ul className="text-md md:text-lg text-gray-500 text-center pt-8 space-y-3">
+              <ul className="text-lg text-gray-500 text-center pt-8 space-y-3">
                 <li>I've actually won a local crossfit competition</li>
                 <li>I've been to 21 countries and collect shot glasses</li>
                 <li>I'm addicted to the Hamilton musical</li>
