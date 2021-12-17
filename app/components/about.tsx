@@ -35,7 +35,7 @@ const About = () => {
             </div>
 
             {/* Image */}
-            <div className="flex justify-center mt-10 md:mt-0">
+            <div className="flex justify-center">
               <img
                 src={meImage}
                 alt="marcel photo"
@@ -60,7 +60,7 @@ const About = () => {
             </div>
 
             {/* Content */}
-            <div className="flex flex-col justify-center items-center mt-20 md:mt-0">
+            <div className="flex flex-col justify-center items-center mt-12 md:mt-0">
               <h1 className="text-3xl text-gray-700 md:text-4xl">
                 💻 Talking nerdy
               </h1>
@@ -87,12 +87,12 @@ const About = () => {
         <section>
           <div className="md:grid md:space-x-4 md:grid-cols-2">
             {/* Content */}
-            <div className="flex flex-col justify-center items-center mt-20 md:mt-0">
+            <div className="flex flex-col justify-center items-center mt-12 md:mt-0">
               <h1 className="text-3xl text-gray-700 md:text-4xl">
                 💪🏼 Random facts
               </h1>
 
-              <ul className="text-lg text-gray-500 text-center pt-8 space-y-3">
+              <ul className="text-md md:text-lg text-gray-500 text-center pt-8 space-y-3">
                 <li>I've actually won a local crossfit competition</li>
                 <li>I've been to 21 countries and collect shot glasses</li>
                 <li>I'm addicted to the Hamilton musical</li>
