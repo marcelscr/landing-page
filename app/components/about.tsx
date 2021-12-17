@@ -9,7 +9,7 @@ const About = () => {
   return (
     <>
       {/* Presentation */}
-      <ContentCard className="pb-16">
+      <ContentCard className="pb-0">
         <section>
           <div className="grid md:space-x-4 md:grid-cols-2 ">
             {/* Content */}
@@ -28,7 +28,7 @@ const About = () => {
                 drink iced tea. When I'm not fighting pixels, I also enjoy going
                 on hikes, doing crossfit and pampering my cats.
               </p>
-              <p className="pt-6 text-gray-700 text-lg">
+              <p className="pt-6 pb-0 text-gray-700 text-lg md:pb-16">
                 The hardest part about working with me is actually calling my
                 name correctly.
               </p>
