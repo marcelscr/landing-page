@@ -8,7 +8,7 @@ const About = () => {
   return (
     <>
       {/* Presentation */}
-      <ContentCard>
+      <ContentCard className="pb-16">
         <section>
           <div className="grid md:space-x-4 md:grid-cols-2 border-b-[1px]">
             {/* Content */}
@@ -38,7 +38,7 @@ const About = () => {
       </ContentCard>
 
       {/* Nerdy interests */}
-      <ContentCard>
+      <ContentCard className="md:py-20">
         <section>
           <div className="flex flex-col-reverse md:grid md:space-x-4 md:grid-cols-2 md:py-8">
             {/* Image */}
