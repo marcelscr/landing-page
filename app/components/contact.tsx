@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <div className="m-auto max-w-5xl p-8 lg:px-0">
+    <div className="m-auto max-w-5xl p-8 lg:px-0 text-lg text-gray-800">
       <section>
         <h1 className="text-lg font-bold">
           "I promise I'll answer your email" - Albert Einstein

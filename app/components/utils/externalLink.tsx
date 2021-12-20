@@ -1,7 +1,7 @@
 type Props = {
   to: string
   className?: string
-  children?: JSX.Element | string
+  children?: React.ReactNode
 }
 
 function ExternalLink({ to, className, children }: Props) {
