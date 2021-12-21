@@ -20,7 +20,7 @@ const Contact = () => {
             <ExternalLink
               className="font-bold hover:underline"
               to="https://www.linkedin.com/in/marcel-rebou%C3%A7as-14291883/">
-              Linked In.
+              LinkedIn.
             </ExternalLink>{' '}
             That's it.
           </p>
