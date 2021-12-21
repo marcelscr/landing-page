@@ -18,6 +18,7 @@ import picture5 from './images/picture-5.png'
 
 const StyledPopup = styled(Popup)`
   &-content {
+    width: 80%;
     max-width: 768px;
     border-radius: 4px;
   }
@@ -33,7 +34,13 @@ const Pictures: Record<string, PictureProps> = {
     className: 'hidden md:inline'
   },
   Two: { id: '2', src: picture2, alt: 'marcel selfie' },
-  Three: { id: '3', src: picture3, alt: 'marcel trying to crossfit' },
+  Three: {
+    id: '3',
+    src: picture3,
+    alt: 'marcel trying to crossfit',
+    className: 'hidden sm:inline'
+  },
+
   Four: { id: '4', src: picture4, alt: 'marcel trying to hack something' },
   Five: {
     id: '5',
