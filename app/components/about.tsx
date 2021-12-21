@@ -1,6 +1,7 @@
 import Popup from 'reactjs-popup'
 import { useState } from 'react'
 import cn from 'classnames'
+import styled from 'styled-components'
 
 import ExternalLink from '~/components/utils/externalLink'
 import ContentCard from '~/components/utils/contentCard'
@@ -14,6 +15,13 @@ import picture2 from './images/picture-2.png'
 import picture3 from './images/picture-3.png'
 import picture4 from './images/picture-4.png'
 import picture5 from './images/picture-5.png'
+
+const StyledPopup = styled(Popup)`
+  &-content {
+    max-width: 768px;
+    border-radius: 4px;
+  }
+`
 
 type PictureProps = { id: string; src: string; alt: string; className?: string }
 
@@ -81,7 +89,7 @@ const About = () => {
           </div>
 
           {/* "Pictures" */}
-          <div className="flex items-center justify-center pb-8 space-x-4 mt-8">
+          <div className="flex items-center justify-center pb-8 mt-8">
             {Object.values(Pictures).map(picture => (
               <img
                 key={picture.id}
@@ -89,11 +97,24 @@ const About = () => {
                 alt={picture.alt}
                 onClick={() => setSelectedPicture(picture)}
                 className={cn(
-                  'object-cover h-32 rounded-sm border-2 border-gray-700 cursor-pointer',
+                  'object-cover h-32 rounded-sm border-2 border-gray-700 cursor-pointer mx-2',
                   picture.className
                 )}
               />
             ))}
+            {selectedPicture && (
+              <StyledPopup
+                open
+                closeOnDocumentClick
+                closeOnEscape
+                onClose={() => setSelectedPicture(null)}
+                className="max-w-62">
+                <img
+                  {...selectedPicture}
+                  onClick={() => setSelectedPicture(null)}
+                />
+              </StyledPopup>
+            )}
           </div>
         </section>
       </ContentCard>
