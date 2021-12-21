@@ -139,9 +139,9 @@ const About = () => {
 
             {/* Content */}
             <div className="flex flex-col justify-center items-center mt-12 md:mt-0">
-              <h1 className="text-3xl text-gray-700 md:text-4xl">
+              <h2 className="text-3xl text-gray-700 md:text-4xl">
                 💻 Talking nerdy
-              </h1>
+              </h2>
               <p className="text-md text-gray-400 pt-8">I'm into:</p>
               <ul className="text-lg text-gray-500 text-center pt-2 space-y-3">
                 <li>Front-end development</li>
@@ -166,9 +166,9 @@ const About = () => {
           <div className="md:grid md:space-x-4 md:grid-cols-2">
             {/* Content */}
             <div className="flex flex-col justify-center items-center mt-12 md:mt-0">
-              <h1 className="text-3xl text-gray-700 md:text-4xl">
+              <h2 className="text-3xl text-gray-700 md:text-4xl">
                 💪🏼 Random facts
-              </h1>
+              </h2>
 
               <ul className="text-lg text-gray-500 text-center pt-8 space-y-3">
                 <li>I've actually won a local crossfit competition</li>
