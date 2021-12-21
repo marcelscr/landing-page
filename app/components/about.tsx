@@ -48,8 +48,6 @@ const About = () => {
     null
   )
 
-  console.log(selectedPicture)
-
   return (
     <>
       {/* Presentation */}
