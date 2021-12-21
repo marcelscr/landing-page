@@ -1,17 +1,53 @@
+import Popup from 'reactjs-popup'
+import { useState } from 'react'
+import cn from 'classnames'
+
 import ExternalLink from '~/components/utils/externalLink'
 import ContentCard from '~/components/utils/contentCard'
 
+// Images
 import meImage from './images/me-pixels.jpg'
 import nerdyImage from './images/talk-nerdy.jpg'
 import dwightImage from './images/dwight.png'
+import picture1 from './images/picture-1.png'
+import picture2 from './images/picture-2.png'
+import picture3 from './images/picture-3.png'
+import picture4 from './images/picture-4.png'
+import picture5 from './images/picture-5.png'
+
+type PictureProps = { id: string; src: string; alt: string; className?: string }
+
+const Pictures: Record<string, PictureProps> = {
+  One: {
+    id: '1',
+    src: picture1,
+    alt: 'inca trail',
+    className: 'hidden md:inline'
+  },
+  Two: { id: '2', src: picture2, alt: 'marcel selfie' },
+  Three: { id: '3', src: picture3, alt: 'marcel trying to crossfit' },
+  Four: { id: '4', src: picture4, alt: 'marcel trying to hack something' },
+  Five: {
+    id: '5',
+    src: picture5,
+    alt: 'marcel on the rocks',
+    className: 'hidden md:inline'
+  }
+}
 
 const About = () => {
+  const [selectedPicture, setSelectedPicture] = useState<PictureProps | null>(
+    null
+  )
+
+  console.log(selectedPicture)
+
   return (
     <>
       {/* Presentation */}
       <ContentCard className="pb-0">
         <section>
-          <div className="grid md:space-x-4 md:grid-cols-2 ">
+          <div className="grid md:space-x-4 md:grid-cols-2 border-b-[0.1px]">
             {/* Content */}
             <div className="flex flex-col justify-center">
               <h1 className="text-6xl font-bold text-gray-800 md:text-8xl">
@@ -42,6 +78,22 @@ const About = () => {
                 className="object-cover max-h-screen"
               />
             </div>
+          </div>
+
+          {/* "Pictures" */}
+          <div className="flex items-center justify-center pb-8 space-x-4 mt-8">
+            {Object.values(Pictures).map(picture => (
+              <img
+                key={picture.id}
+                src={picture.src}
+                alt={picture.alt}
+                onClick={() => setSelectedPicture(picture)}
+                className={cn(
+                  'object-cover h-32 rounded-sm border-2 border-gray-700 cursor-pointer',
+                  picture.className
+                )}
+              />
+            ))}
           </div>
         </section>
       </ContentCard>

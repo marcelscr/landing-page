@@ -10,15 +10,21 @@ import {
 import type { LinksFunction } from 'remix'
 
 import Layout from './components/layout'
-import tailwindUrl from './styles/tailwind.css'
+import tailwindCss from './styles/tailwind.css'
+import reactPopupCss from 'reactjs-popup/dist/index.css'
 
 export const links: LinksFunction = () => {
   return [
-    { rel: 'stylesheet', href: tailwindUrl },
+    { rel: 'stylesheet', href: tailwindCss },
     {
       // https://www.w3schools.com/howto/howto_css_social_media_buttons.asp
       rel: 'stylesheet',
       href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+    },
+    {
+      // https://github.com/leandrowd/react-responsive-carousel
+      rel: 'stylesheet',
+      href: reactPopupCss
     }
   ]
 }
