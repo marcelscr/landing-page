@@ -1,21 +1,40 @@
+import ExternalLink from './utils/externalLink'
+
+// Images
+import nokia from './images/nokia.png'
+
 const Contact = () => {
   return (
-    <div className="m-auto max-w-5xl p-8 lg:px-0 text-lg text-gray-800">
+    <div className="m-auto max-w-5xl p-8 lg:px-0 text-lg text-gray-800 md:pt-16">
       <section>
-        <h1 className="text-lg font-bold">
-          "I promise I'll answer your email" - Albert Einstein
+        <h1 className="text-6xl font-bold text-gray-800 md:text-8xl">
+          contact.
         </h1>
-        <p className="pt-4">You can contact me through 📧📱</p>
-        <p className="pt-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p className="pt-4">Work in progress.</p>
+        <h2 className="text-3xl font-bold text-gray-700 md:text-4xl">
+          <span className="line-through">don't</span> call me maybe.
+        </h2>
+
+        <div>
+          <p className="pt-8 text-gray-800 text-2xl">
+            You can contact me through{' '}
+            <ExternalLink
+              className="font-bold hover:underline"
+              to="https://www.linkedin.com/in/marcel-rebou%C3%A7as-14291883/">
+              Linked In.
+            </ExternalLink>{' '}
+            That's it.
+          </p>
+          {/* Image */}
+          <div className="flex justify-center my-8">
+            <img src={nokia} alt="nokia" className="object-cover max-h-80" />
+          </div>
+
+          <p className="pt-6 text-gray-700 text-2xl text-right">
+            <span className="italic">“I promise I'll answer your email”</span>
+            <br />
+            <span className="text-lg">Albert Einstein</span>
+          </p>
+        </div>
       </section>
     </div>
   )
