@@ -11,9 +11,7 @@ const Layout = ({ children }: Props) => {
       <Header className="flex-shrink-0" />
 
       {/* Content */}
-      <main className="flex-grow flex-shrink-0">
-        <div>{children}</div>
-      </main>
+      <main className="flex-grow flex-shrink-0">{children}</main>
 
       {/* Footer */}
       <footer className="flex flex-shrink-0 items-center justify-center p-8">

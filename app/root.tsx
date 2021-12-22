@@ -10,6 +10,7 @@ import {
 import type { LinksFunction } from 'remix'
 
 import Layout from './components/layout'
+import ErrorWrapper from './components/error'
 import tailwindCss from './styles/tailwind.css'
 import reactPopupCss from 'reactjs-popup/dist/index.css'
 
@@ -44,15 +45,10 @@ export function ErrorBoundary({ error }: { error: Error }) {
   return (
     <Document title="Error!">
       <Layout>
-        <div>
-          <h1>There was an error</h1>
+        <ErrorWrapper>
+          <h1 className="font-bold text-gray-700">There was an error</h1>
           <p>{error.message}</p>
-          <hr />
-          <p>
-            Hey, developer, you should replace this with what you want your
-            users to see.
-          </p>
-        </div>
+        </ErrorWrapper>
       </Layout>
     </Document>
   )
@@ -84,10 +80,12 @@ export function CatchBoundary() {
   return (
     <Document title={`${caught.status} ${caught.statusText}`}>
       <Layout>
-        <h1>
-          {caught.status}: {caught.statusText}
-        </h1>
-        {message}
+        <ErrorWrapper>
+          <h1 className="font-bold text-gray-700">
+            {caught.status}: {caught.statusText}
+          </h1>
+          {message}
+        </ErrorWrapper>
       </Layout>
     </Document>
   )
