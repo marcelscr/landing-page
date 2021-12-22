@@ -142,8 +142,8 @@ const About = () => {
               <h2 className="text-3xl text-gray-700 md:text-4xl">
                 💻 Talking nerdy
               </h2>
-              <p className="text-md text-gray-400 pt-8">I'm into:</p>
-              <ul className="text-lg text-gray-500 text-center pt-2 space-y-3">
+              <p className="text-md text-gray-500 pt-8">I'm into:</p>
+              <ul className="text-lg text-gray-600 text-center pt-2 space-y-3">
                 <li>Front-end development</li>
                 <li>UX/UI design</li>
                 <li>
@@ -170,7 +170,7 @@ const About = () => {
                 💪🏼 Random facts
               </h2>
 
-              <ul className="text-lg text-gray-500 text-center pt-8 space-y-3">
+              <ul className="text-lg text-gray-600 text-center pt-8 space-y-3">
                 <li>I've actually won a local crossfit competition</li>
                 <li>I've been to 21 countries and collect shot glasses</li>
                 <li>I'm addicted to the Hamilton musical</li>

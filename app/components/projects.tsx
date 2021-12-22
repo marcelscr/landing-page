@@ -16,15 +16,17 @@ const Projects = () => {
         <h2 className="text-3xl font-bold text-gray-700 md:text-4xl">
           re-inventing the wheel.
         </h2>
-        <h3 className="pt-6 text-gray-600 text-2xl">
+        <p className="pt-6 text-gray-600 text-lg">
           I decided to remake the UI of well-known apps to study, learn new
           frameworks and have fun. I'll list them here as they are done!
-        </h3>
+        </p>
 
         <div className="grid md:space-x-4 md:grid-cols-2">
           <div>
-            <h4 className="pt-8 text-gray-800 text-2xl">Current projects:</h4>
-            <ul className="pt-4 space-y-4 text-xl">
+            <h3 className="pt-8 text-gray-800 text-lg font-semibold">
+              Current projects:
+            </h3>
+            <ul className="pt-4 space-y-4 text-lg text-gray-700">
               <li>
                 <Link to="/" className="hover:underline">
                   1. This website

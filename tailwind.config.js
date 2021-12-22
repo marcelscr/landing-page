@@ -62,7 +62,7 @@ module.exports = {
         'fade-in-left': 'fade-in-left 1.0s ease-out',
         'fade-in-bottom': 'fade-in-bottom 0.5s ease-out',
         'fade-in': 'fade-in 0.5s ease-out',
-        wiggle: 'wiggle 1.5s ease-out'
+        wiggle: 'wiggle 1.0s ease-out'
       }
     }
   },
