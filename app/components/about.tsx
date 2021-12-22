@@ -84,11 +84,11 @@ const About = () => {
             </div>
 
             {/* Image */}
-            <div className="flex justify-center">
+            <div className="flex justify-center overflow-hidden">
               <img
                 src={meImage}
                 alt="marcel photo"
-                className="object-cover max-h-screen"
+                className="object-cover max-h-screen animate-fade-in-bottom"
               />
             </div>
           </div>

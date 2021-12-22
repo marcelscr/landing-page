@@ -66,7 +66,7 @@ const Projects = () => {
             <img
               src={stoneWheel}
               alt="stone wheel"
-              className="object-cover max-h-80"
+              className="object-cover max-h-80 animate-fade-in"
             />
           </div>
         </div>
