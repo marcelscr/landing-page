@@ -24,11 +24,9 @@ const Contact = () => {
             </ExternalLink>{' '}
             That's it.
           </p>
-          {/* Image */}
           <div className="flex justify-center my-8">
             <img src={nokia} alt="nokia" className="object-cover max-h-80" />
           </div>
-
           <p className="pt-6 text-gray-700 text-2xl text-right">
             <span className="italic">“I promise I'll answer your email”</span>
             <br />

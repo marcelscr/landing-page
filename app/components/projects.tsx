@@ -56,7 +56,7 @@ const Projects = () => {
                 4. Slack with Remix (<span>Soon...</span>)
               </li>
               <li className="text-gray-400">
-                5. Slack with Remix (<span>Soon...</span>)
+                5. Netflix with Remix (<span>Soon...</span>)
               </li>
             </ul>
           </div>
