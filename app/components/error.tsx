@@ -10,7 +10,7 @@ const ErrorWrapper = ({ children }: Props) => {
   return (
     <div
       className={cn(
-        'flex flex-col items-center justify-center text-center h-full'
+        'flex flex-col items-center justify-center text-center h-full p-8'
       )}>
       <img src={logoMe} alt="pixelated logo" className="w-28 h-28 mb-8" />
       {children}
