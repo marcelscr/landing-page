@@ -1,5 +1,5 @@
-import { Link, NavLink } from 'remix'
-import { useState } from 'react'
+import { Link, NavLink, useLocation } from 'remix'
+import { useState, useEffect } from 'react'
 import cn from 'classnames'
 import { MenuIcon } from '@heroicons/react/solid'
 
@@ -30,6 +30,11 @@ type Props = {
 
 const Header = ({ className }: Props) => {
   const [open, setOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [location.pathname])
 
   return (
     <>
