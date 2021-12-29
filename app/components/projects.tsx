@@ -51,8 +51,18 @@ const Projects = () => {
                   <GithubIcon />)
                 </ExternalLink>
               </li>
-              <li className="text-gray-400">
-                3. Google with Remix (<span>Soon...</span>)
+              <li>
+                <ExternalLink
+                  to="https://google.marcelreboucas.com"
+                  className="hover:underline">
+                  3. Google with Remix
+                </ExternalLink>
+                <ExternalLink
+                  to="https://github.com/marcelscr/google-remix"
+                  className="ml-1">
+                  (<span className="hover:underline">Github</span>{' '}
+                  <GithubIcon />)
+                </ExternalLink>
               </li>
               <li className="text-gray-400">
                 4. Slack with Remix (<span>Soon...</span>)
